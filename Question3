@@ -1,1 +1,33 @@
+/* Benjamin Wu
+CISC 3150
+HW2-Question3
 
+Comments: Used the String.charAt method to find palindrome. Set the first word, then make a new String and loop it backwards while placing it in the second string while using the charAt method.
+Had some difficulties in setting the second string, such as first creating the string before putting anything in the string first, 
+and looping it due to out of bounds exception.
+*/
+
+import java.util.*;
+
+class question3
+{
+	public static void main(String[] args)
+	{	
+		String first;
+		String second = ""; 			   //Must declare the second string otherwise the for loop to create the second word would not work.
+		Scanner scan = new Scanner(System.in);
+ 
+		System.out.println("Enter something to check if it's a palindrome");
+		first = scan.next();
+
+ 		int length = first.length();
+
+		for (int i = length - 1; i >= 0; i--)    //Had out of bounds exception because it was not length - 1... length makes it out of bounds.
+			second = second + first.charAt(i); //backwards looping of the first string and place it in the second string.
+
+		if (first.equals(second))
+			System.out.println("This IS a palindrome!");
+		else
+			System.out.println("This ISN'T a palindrome!");
+	}
+}
