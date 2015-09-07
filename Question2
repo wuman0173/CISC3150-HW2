@@ -1,1 +1,70 @@
+/* Benjamin Wu
+CISC 3150
+HW2-Question2
 
+Comments:
+
+*/
+import java.util.*;
+
+class question2
+{
+
+	public static boolean isLeapYear(int year) 
+	{
+		if ((year % 4) == 0) 
+			return true;
+        	return false;
+	}
+	public static int firstDayofMonth(String x)
+	{
+		if ( x.equals("Su"))
+			return 0;
+		else if (x.equals("Mo"))
+			return 1;
+		else if (x.equals("Tu"))
+			return 2;
+		else if (x.equals("We"))
+			return 3;
+		else if (x.equals("Th"))
+			return 4;
+		else if (x.equals("Fr"))
+			return 5;
+		else if (x.equals("Sa"))
+			return 6;
+		else
+			return -1;
+	}
+public static void main(String args[])
+	{
+
+	String[] month =
+		{
+		"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
+		};
+	int[] days =
+		{
+		31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
+		};
+
+	Scanner scan = new Scanner(System.in);
+	System.out.println("What year is it?");
+	
+	int year = scan.nextInt();
+	if (isLeapYear(year)) 
+		days[1] = 29;
+
+	System.out.println("What day of the week does the first of January fall on? Su, Mo, Tu, We, Th, Fr, or Sa? Case Sensitive!");
+	String firstDay = scan.next();
+	int dayOne = firstDayofMonth(firstDay);
+	while (dayOne == -1)
+		{
+		System.out.println("You have entered an incorrect day of the week, please type the exact spelling, *Case Sensitive*");
+		firstDay = scan.next();
+		dayOne = firstDayofMonth(firstDay);
+		}
+	//System.out.println(dayOne); //Test if while loop for typing in weekday exception.
+
+	
+	}
+}
