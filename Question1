@@ -1,1 +1,43 @@
+/* Benjamin Wu
+CISC 3150
+HW2-Question1
 
+Comments: I cannot seem to understand how to create the mathematical logic behind the second half of the triangle in order to do what is desired.
+I need to set each new line an integer starting from 1; to be incremented, but decreasing on the same line.
+
+*/
+
+import java.util.*;
+import java.io.*;
+
+class question1
+{
+	public static void main(String[] args)
+	{	
+		Scanner scan = new Scanner(System.in);
+		System.out.println("How tall of a pyramid do you want to display on the screen?");
+		
+		int number = scan.nextInt();
+		int subtractor = 1;
+		int adder = 1;
+		for (int i = 0; i < number; i++)
+		{
+			for (int j = 0; j < number-i-1; j++)
+			{
+				System.out.print(" ");
+			}
+			for(int k = number - i; k <= number; k++)
+				{
+				System.out.print(adder);
+				adder = adder + 1;
+				}
+			adder = 1;
+			for(int k = number - i; k < number ; k++)
+			{
+				System.out.print(subtractor);
+				subtractor = subtractor + 1;
+			}
+			System.out.print("\n");
+		}
+	}
+}
