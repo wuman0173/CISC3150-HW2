@@ -1,1 +1,35 @@
+/* Benjamin Wu
+CISC 3150
+HW2-Question4
 
+Comments: Did not add exceptions to user input.
+*/
+import java.util.*;
+
+class question4
+{
+	public static void main(String args[])
+	{
+	System.out.println("Breaking out of nested loops using labels.");
+	System.out.println("Loop one will be counting 0 to 100; while Loop Two will be counting 200 to 300");
+	System.out.println("The search will stop at specific i and j numbers. 20 and 292 for example.");
+
+	System.out.println("Enter outer loop i, between 0 and 100 to search");
+	Scanner scan = new Scanner(System.in);
+	int userI = scan.nextInt();
+	System.out.println("Enter inner loop j, between 200 and 300 to search");
+	int userJ = scan.nextInt();	
+
+
+    search:
+	for (int i = 0; i <= 100; i++)
+		{
+		for (int j = 200; j <= 300; j++)
+			{
+			System.out.println("Loop 1: " + i + " Loop Two: " + j);
+			if (i == userI && j == userJ)
+				break search;
+			}
+		}
+	}
+}	
