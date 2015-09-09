@@ -5,6 +5,8 @@ HW2-Question1
 Comments: I cannot seem to understand how to create the mathematical logic behind the second half of the triangle in order to do what is desired.
 I need to set each new line an integer starting from 1; to be incremented, but decreasing on the same line.
 
+UPDATE: I had to play around with the numbers with tempsub and subtractor to make what was needed. I need to find out what is efficient, because I am sure this is not the best way to do it.
+
 */
 
 import java.util.*;
@@ -32,11 +34,13 @@ class question1
 				adder = adder + 1;
 				}
 			adder = 1;
+			int tempsub = subtractor - 1; 		//Added this: sets tempsub to print out the first number of each line before the loop starts to decrement it.
 			for(int k = number - i; k < number ; k++)
 			{
-				System.out.print(subtractor);
-				subtractor = subtractor + 1;
+				System.out.print(tempsub);	//Tried playing around with this...like -/+ subtractor, adder, number, tempsub
+				tempsub = tempsub - 1;		//Within the loop, decrements it so it prints out counting downwards in the same line
 			}
+			subtractor = subtractor + 1;		//outside the Loop, increments the next line first number, so that tempsub gets the right number.
 			System.out.print("\n");
 		}
 	}
