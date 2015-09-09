@@ -6,6 +6,7 @@ Comments: I cannot seem to understand how to create the mathematical logic behin
 I need to set each new line an integer starting from 1; to be incremented, but decreasing on the same line.
 
 UPDATE: I had to play around with the numbers with tempsub and subtractor to make what was needed. I need to find out what is efficient, because I am sure this is not the best way to do it.
+Does not have a proper format with pyramids with over 10 as base! Needs to be updated with more spaces to be nice looking.
 
 */
 
@@ -26,11 +27,11 @@ class question1
 		{
 			for (int j = 0; j < number-i-1; j++)
 			{
-				System.out.print(" ");
+				System.out.print("  ");
 			}
 			for(int k = number - i; k <= number; k++)
 				{
-				System.out.print(adder);
+				System.out.print(adder + " ");
 				adder = adder + 1;
 				}
 			adder = 1;
